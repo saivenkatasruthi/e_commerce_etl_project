@@ -1,0 +1,10 @@
+CREATE TABLE fact_sales (
+    sales_id INT PRIMARY KEY,
+    product_id INT,
+    customer_id INT,
+    quantity_sold INT,
+    total_amount DECIMAL(10, 2),
+    sales_date DATE,
+    FOREIGN KEY (product_id) REFERENCES dim_product(product_id),
+    FOREIGN KEY (customer_id) REFERENCES dim_customer(customer_id)
+);
